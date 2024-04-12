@@ -55,10 +55,40 @@ h5
         transition: all 0.3s ease-in-out
         width: 3000px
         height: 400px
-        background-image: url(../images/bg2.jpg)
-        background-size: contain
-        background-position-x: -250px
-        background-position-y: center
+        .game-background
+            position: absolute
+            z-index: 0
+            top: 0
+            left: 0
+            width: 3000px
+            height: 400px
+            background-image: url(../images/bg2.jpg)
+            background-size: contain
+            background-position-x: -250px
+            background-position-y: center
+        .game-stats
+            z-index: 8
+            display: flex
+            justify-content: space-between
+            width: 700px
+            position: absolute
+            .game-score,
+            .game-lives
+                margin: 15px
+                display: flex
+                align-items: center
+                img
+                    width: 20px
+                    height: 20px
+                    margin: 0 5px
+                    display: inline-block
+                p
+                    margin: 0
+                    font-weight: 900
+                    font-size: 20px
+                    line-height: 1
+                    color: #13122C
+                
 
     .game-ground
         position: absolute
@@ -69,9 +99,24 @@ h5
         background-color: #13122C
         display: block
 
-    .game-character
+    .game-player
         position: absolute
-        background-color: #ffea00
+        background-color: #13122C
         display: inline-block
         z-index: 10
-        border-radius: 4px
+        border-radius: 24px 24px 0 0
+        background-image: url(../images/eyes.png)
+        background-size: 41px
+        background-repeat: no-repeat
+        background-position: 13px 13px
+
+    .game-enemy
+        position: absolute
+        background-color: #13122C
+        display: inline-block
+        z-index: 10
+        border-radius: 50%
+        background-image: url(../images/enemy.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: top left

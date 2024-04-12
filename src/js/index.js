@@ -8,50 +8,35 @@ window.onload = function () {
 
 		game.start()
 		
-		function handleKeydown(event) {
-			const key = event.key
-			const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', '32']
-
-			if (possibleKeystrokes.includes(key)) {
-				// event.preventDefault()
-
-				switch (key) {
-					
-					case 'ArrowLeft':
-                        console.log('keydown - ArrowLeft');
-						// game.player.directionX = 30;
-
-						if (game.player.velX < game.player.speed) {
-							game.player.velX--;
-						}
-
-						break
-					case 'ArrowUp':
-                        console.log('keydown - ArrowUp');
-						// game.player.directionY = -1
-						break
-					case 'ArrowRight':
-                        console.log('keydown - ArrowRight');
-						// game.player.directionX = -30
-
-						if (game.player.velX < game.player.speed) {
-							game.player.velX++;
-						}
-
-						break
-					case 'ArrowDown':
-                        console.log('keydown - ArrowDown');
-						// game.player.directionY = 1
-						break
-					case '32':
-                        console.log('keydown - Space bar');
-						// game.player.directionY = 1
-						break
-				}
+		function handleKeyDown(event) {
+			const key = event.key;
+		
+			switch (key) {
+				case 'ArrowLeft':
+					game.player.moveLeft();
+					game.player.character.style.transform = 'scaleX(-1)'
+					break;
+				case 'ArrowRight':
+					game.player.moveRight();
+					game.player.character.style.transform = 'scaleX(1)'
+					break;
 			}
 		}
-
-		// Add the handleKeydown function as an event listener for the keydown event
-		window.addEventListener('keydown', handleKeydown)
+		
+		function handleKeyUp(event) {
+			const key = event.key;
+		
+			switch (key) {
+				case 'ArrowLeft':
+				case 'ArrowRight':
+					game.player.stopMoving(); // Call stopMoving method when left or right arrow key is released
+					break;
+				// Handle other keys as needed
+			}
+		}
+		
+		// Add event listeners for keydown and keyup events
+		window.addEventListener('keydown', handleKeyDown);
+		window.addEventListener('keyup', handleKeyUp);
 	}
 }

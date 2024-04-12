@@ -11906,10 +11906,46 @@ h5, .h5 {
   transition: all 0.3s ease-in-out;
   width: 3000px;
   height: 400px;
+}
+#game-container #game-screen .game-background {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 3000px;
+  height: 400px;
   background-image: url(../images/bg2.jpg);
   background-size: contain;
   background-position-x: -250px;
   background-position-y: center;
+}
+#game-container #game-screen .game-stats {
+  z-index: 8;
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  position: absolute;
+}
+#game-container #game-screen .game-stats .game-score,
+#game-container #game-screen .game-stats .game-lives {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+}
+#game-container #game-screen .game-stats .game-score img,
+#game-container #game-screen .game-stats .game-lives img {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  display: inline-block;
+}
+#game-container #game-screen .game-stats .game-score p,
+#game-container #game-screen .game-stats .game-lives p {
+  margin: 0;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  color: #13122C;
 }
 #game-container .game-ground {
   position: absolute;
@@ -11920,12 +11956,27 @@ h5, .h5 {
   background-color: #13122C;
   display: block;
 }
-#game-container .game-character {
+#game-container .game-player {
   position: absolute;
-  background-color: #ffea00;
+  background-color: #13122C;
   display: inline-block;
   z-index: 10;
-  border-radius: 4px;
+  border-radius: 24px 24px 0 0;
+  background-image: url(../images/eyes.png);
+  background-size: 41px;
+  background-repeat: no-repeat;
+  background-position: 13px 13px;
+}
+#game-container .game-enemy {
+  position: absolute;
+  background-color: #13122C;
+  display: inline-block;
+  z-index: 10;
+  border-radius: 50%;
+  background-image: url(../images/enemy.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
 }
 
 /*# sourceMappingURL=main.min.css.map */
