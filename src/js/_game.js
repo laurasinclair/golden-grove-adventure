@@ -9,7 +9,8 @@ export default class Game {
 		this.gameContainer = document.querySelector('#game-container')
 		this.gameScreen = document.querySelector('#game-screen')
 		this.gameStart = document.querySelector('#game-start')
-		this.gameEndScreen = document.querySelector('#game-end')
+		this.gameLoseScreen = document.querySelector('#game-lose')
+		this.gameWinScreen = document.querySelector('#game-win')
 		this.livesContainer = document.querySelectorAll('.game-lives-thing')
 
 		this.height = '100%'
@@ -24,7 +25,6 @@ export default class Game {
 
 		this.gameIsOver = false
 		this.gameIntervalId = null
-		// this.gameLoopFrequency = Math.round(10000 / 60)
 		this.gameLoopFrequency = Math.round(1000 / 60) // 16 fps
 
 		this.ground = new World(this.gameScreen, 100, this.player)
@@ -130,11 +130,11 @@ export default class Game {
 
 		// If the lives are 0, end the game
 		if (this.lives === 0) {
-			this.endGame()
+			this.loseGame()
 		}
-		if (this.player.endGame === true) {
+		if (this.player.winGame === true) {
 			console.log('end game!!')
-			this.endGame()
+			this.winGame()
 		}
 
 		// create a new enemy based on a random probability
@@ -144,12 +144,25 @@ export default class Game {
 		}
 	}
 
-	endGame() {
+	loseGame() {
 		this.player.character.remove()
 		this.gameIsOver = true
 
 		this.gameScreen.style.display = 'none'
-		this.gameEndScreen.style.display = 'flex'
+		this.gameLoseScreen.style.display = 'flex'
+
+		document.querySelector('.game-score p').remove()
+        if (document.querySelector('.strawberry')) {
+            document.querySelector('.strawberry').remove()
+        }
+	}
+
+	winGame() {
+		this.player.character.remove()
+		this.gameIsOver = true
+
+		this.gameScreen.style.display = 'none'
+		this.gameWinScreen.style.display = 'flex'
 
 		document.querySelector('.game-score p').remove()
         if (document.querySelector('.strawberry')) {

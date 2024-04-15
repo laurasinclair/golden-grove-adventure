@@ -3,6 +3,7 @@ import Game from './_game.js'
 window.onload = function () {
 	const startButton = document.getElementById('start-button')
 	const restartButton = document.getElementById('restart-button')
+	const restartWinButton = document.getElementById('restart-win-button')
 
 	startButton.addEventListener('click', function () {
 		startGame()
@@ -12,6 +13,15 @@ window.onload = function () {
 		startGame()
 
 		this.gameScreen.style.display = 'flex'
+		this.gameWinScreen.style.display = 'none'
+		this.gameEndScreen.style.display = 'none'
+	})
+	
+	restartWin.addEventListener('click', function () {
+		startGame()
+
+		this.gameScreen.style.display = 'flex'
+		this.gameWinScreen.style.display = 'none'
 		this.gameEndScreen.style.display = 'none'
 	})
 

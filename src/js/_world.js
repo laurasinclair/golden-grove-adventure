@@ -21,7 +21,7 @@ export default class World {
 	}
 
 	updatePosition() {
-		if (this.player.positionX > 250) {
+		if (this.player.positionX > 250) {  
 			// when player is at 2/3 of the screen it doesn't actually move anymore, but the background does
 			this.bg.style.left = `-${this.player.positionX - 250}px`
 		}

@@ -11873,7 +11873,8 @@ body {
   border: 1px solid red;
 }
 #game-container #game-start,
-#game-container #game-end {
+#game-container #game-lose,
+#game-container #game-win {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -11889,15 +11890,18 @@ body {
   justify-content: center;
 }
 #game-container #game-start h2, #game-container #game-start .h2,
-#game-container #game-end h2,
-#game-container #game-end .h2 {
+#game-container #game-lose h2,
+#game-container #game-lose .h2,
+#game-container #game-win h2,
+#game-container #game-win .h2 {
   font-size: 3rem;
   letter-spacing: 1px;
   margin-bottom: 20px;
   font-weight: 400;
 }
 #game-container #game-start button,
-#game-container #game-end button {
+#game-container #game-lose button,
+#game-container #game-win button {
   color: #13122C;
   font-family: "Jersey 20", sans-serif;
   letter-spacing: 0.6px;
@@ -11910,8 +11914,10 @@ body {
   transition: 0.2s all ease-in-out;
 }
 #game-container #game-start button:hover, #game-container #game-start button:focus,
-#game-container #game-end button:hover,
-#game-container #game-end button:focus {
+#game-container #game-lose button:hover,
+#game-container #game-lose button:focus,
+#game-container #game-win button:hover,
+#game-container #game-win button:focus {
   color: #fff;
   background-color: #421a03;
   outline: none;
@@ -11920,7 +11926,11 @@ body {
   transition: 0.2s all ease-in-out;
   z-index: 999999999;
 }
-#game-container #game-end {
+#game-container #game-lose {
+  transition: 0.2s all ease-in-out;
+  display: none;
+}
+#game-container #game-win {
   transition: 0.2s all ease-in-out;
   display: none;
 }

@@ -74,9 +74,8 @@ export default class Player {
 
 		if (this.positionX > 1360) {
 			// when player reaches the very end of the level, it can't go past the screen edge
-			this.endGame = true
-			this.positionX = 1380
-			// winGame()
+			this.winGame = true
+			// this.positionX = 1380
 		}
 	}
 
