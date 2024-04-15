@@ -101,4 +101,29 @@ export default class Player {
 			return false
 		}
 	}
+
+	didCollideItem(item) {
+		console.log('item', item)
+
+		// creates a box around the player, one around the enemy, and do something if they crash into each other
+		const playerRect = this.character.getBoundingClientRect()
+
+		if (
+			typeof item === 'img' &&
+			item !== null &&
+			'getBoundingClientRect' in item
+		  ) {
+			const itemRect = item.getBoundingClientRect()
+			console.log(itemRect);
+		  }
+
+		// const itemRect = item.getBoundingClientRect()
+
+		// if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
+		// 	console.log('Yum! 🍓')
+		// 	return true
+		// } else {
+		// 	return false
+		// }
+	}
 }

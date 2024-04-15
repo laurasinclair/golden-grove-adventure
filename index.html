@@ -3,29 +3,44 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>🍓</title>
+		<title>game.</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="stylesheet" href="css/main.min.css" />
 	</head>
 	<body>
 		<div id="app">
 			<div id="game-container">
-				<div id="game-end">
-					You made it to the end!<br> Yay!
+				<div id="game-start">
+					<h2>Let's play!</h2>
+					<button id="start-button">Start Game</button>
 				</div>
+				<div id="game-end">
+					<h2>Oops.<br> You're dead.</h2>
+					<button id="restart-button">Restart</button>
+				</div> <!-- #game-start -->
+
 				<div id="game-screen">
 					<div class="game-stats">
 						<div class="game-score">
 							<img src="./images/star-fill.svg" class="game-score-thing" alt="Score">
 						</div>
 						<div class="game-lives">
-							<img src="./images/heart.svg" class="game-lives-thing" alt="Lives">
-							<img src="./images/heart.svg" class="game-lives-thing" alt="Lives">
-							<img src="./images/heart.svg" class="game-lives-thing" alt="Lives">
+							<div class="game-lives-thing game-lives-empty"></div>
+							<div class="game-lives-thing game-lives-empty"></div>
+							<div class="game-lives-thing game-lives-empty"></div>
+						</div>
+					</div> <!-- .game-stats -->
+
+					<div class="game-background">
+						<div class="bg-branches">
+							<img src="./images/branch1.png" class="bg-branch bg-branch1" alt="">
+							<img src="./images/branch2.png" class="bg-branch bg-branch2" alt="">
+							<img src="./images/bush.png" class="bg-bush" alt="">
+							<img src="./images/branch3.png" class="bg-branch bg-branch3" alt="">
 						</div>
 					</div>
-					<div class="game-background"></div>
-				</div>
-			</div>
+				</div> <!-- #game-screen -->
+			</div> <!-- #game-container -->
 		</div>
 	</body>
 	<script type="module" src="src/js/index.js"></script>

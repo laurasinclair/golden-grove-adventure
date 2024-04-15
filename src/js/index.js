@@ -1,42 +1,54 @@
-import Game from "./_game.js";
+import Game from './_game.js'
 
 window.onload = function () {
-	startGame()
+	const startButton = document.getElementById('start-button')
+	const restartButton = document.getElementById('restart-button')
+
+	startButton.addEventListener('click', function () {
+		startGame()
+	})
+	
+	restartButton.addEventListener('click', function () {
+		startGame()
+
+		this.gameScreen.style.display = 'flex'
+		this.gameEndScreen.style.display = 'none'
+	})
 
 	function startGame() {
 		let game = new Game()
 
 		game.start()
-		
+
 		function handleKeyDown(event) {
-			const key = event.key;
-		
+			const key = event.key
+
 			switch (key) {
 				case 'ArrowLeft':
-					game.player.moveLeft();
+					game.player.moveLeft()
 					game.player.character.style.transform = 'scaleX(-1)'
-					break;
+					break
 				case 'ArrowRight':
-					game.player.moveRight();
+					game.player.moveRight()
 					game.player.character.style.transform = 'scaleX(1)'
-					break;
+					break
 			}
 		}
-		
+
 		function handleKeyUp(event) {
-			const key = event.key;
-		
+			const key = event.key
+
 			switch (key) {
 				case 'ArrowLeft':
 				case 'ArrowRight':
-					game.player.stopMoving(); // Call stopMoving method when left or right arrow key is released
-					break;
+					game.player.stopMoving() // Call stopMoving method when left or right arrow key is released
+					break
 				// Handle other keys as needed
 			}
 		}
-		
-		// Add event listeners for keydown and keyup events
-		window.addEventListener('keydown', handleKeyDown);
-		window.addEventListener('keyup', handleKeyUp);
+
+		// event listeners for keydown and keyup events
+		window.addEventListener('keydown', handleKeyDown)
+		window.addEventListener('keyup', handleKeyUp)
 	}
 }

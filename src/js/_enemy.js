@@ -36,11 +36,11 @@ export default class Enemy {
       // Move the obstacle down by 3px
       this.top += 3;
 
-		// if (this.player.left > 250) {
-		// 	// when player is at 2/3 of the screen it doesn't actually move anymore, but the background does
-		// 	this.character.style.left = `-${this.positionX}px`
-		// }
-		
+	// if (this.player.left > 250) {
+	// 	// when player is at 2/3 of the screen it doesn't actually move anymore, but the background does
+	// 	this.character.style.left = `-${this.positionX}px`
+	// }
+
       // Update the obstacle's position on the screen
       this.updatePosition();
     }

@@ -11884,28 +11884,87 @@ h5, .h5 {
   border-radius: 8px;
   border: 1px solid red;
 }
+#game-container #game-start,
 #game-container #game-end {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 0.3s ease-in-out;
-  background: #383a8f;
+  transition: 0.2s all ease-in-out;
+  background: rgba(31, 30, 33, 0.4745098039);
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+#game-container #game-start h2, #game-container #game-start .h2,
+#game-container #game-end h2,
+#game-container #game-end .h2 {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+#game-container #game-start button,
+#game-container #game-end button {
+  color: #13122C;
+  background-color: #fff;
+  border: 0;
+  border-radius: 10px;
+  font-size: 2rem;
+  padding: 10px 26px;
+  box-shadow: 0 20px 30px rgba(57, 2, 2, 0.2784313725);
+  transition: 0.2s all ease-in-out;
+}
+#game-container #game-start button:hover,
+#game-container #game-end button:hover {
+  color: #fff;
+  background-color: #421a03;
+}
+#game-container #game-start {
+  transition: 0.2s all ease-in-out;
+  z-index: 999999999;
+}
+#game-container #game-end {
+  transition: 0.2s all ease-in-out;
   display: none;
 }
 #game-container #game-screen {
-  transition: all 0.3s ease-in-out;
+  transition: 0.2s all ease-in-out;
   width: 3000px;
   height: 400px;
+}
+#game-container #game-screen .game-strawberry {
+  position: absolute;
+  z-index: 9999;
+  bottom: 80px;
+}
+#game-container #game-screen .bg-branches {
+  display: none;
+}
+#game-container #game-screen .bg-branch {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+#game-container #game-screen .bg-branch1 {
+  left: 0px;
+}
+#game-container #game-screen .bg-branch2 {
+  left: 900px;
+}
+#game-container #game-screen .bg-branch3 {
+  left: 1772px;
+}
+#game-container #game-screen .bg-bush {
+  position: absolute;
+  left: 800px;
+  width: 100px;
+  bottom: 96px;
 }
 #game-container #game-screen .game-background {
   position: absolute;
@@ -11921,7 +11980,7 @@ h5, .h5 {
 }
 #game-container #game-screen .game-stats {
   z-index: 8;
-  display: flex;
+  display: none;
   justify-content: space-between;
   width: 700px;
   position: absolute;
@@ -11931,21 +11990,31 @@ h5, .h5 {
   margin: 15px;
   display: flex;
   align-items: center;
-}
-#game-container #game-screen .game-stats .game-score img,
-#game-container #game-screen .game-stats .game-lives img {
-  width: 20px;
   height: 20px;
-  margin: 0 5px;
-  display: inline-block;
+  margin: 10px;
 }
 #game-container #game-screen .game-stats .game-score p,
 #game-container #game-screen .game-stats .game-lives p {
-  margin: 0;
+  margin: 0 0 0 5px;
   font-weight: 900;
   font-size: 20px;
   line-height: 1;
   color: #13122C;
+}
+#game-container #game-screen .game-stats .game-lives-thing {
+  width: 19px;
+  height: 19px;
+  margin: 0 3px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+#game-container #game-screen .game-stats .game-lives-empty {
+  background-image: url(../images/heart.svg);
+}
+#game-container #game-screen .game-stats .game-lives-full {
+  background-image: url(../images/heart-fill.svg);
 }
 #game-container .game-ground {
   position: absolute;
@@ -11977,6 +12046,10 @@ h5, .h5 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
+}
+
+.debug {
+  outline: 10px solid red;
 }
 
 /*# sourceMappingURL=main.min.css.map */

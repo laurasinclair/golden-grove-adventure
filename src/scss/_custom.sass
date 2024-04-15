@@ -33,28 +33,72 @@ h5
     border-radius: 8px
     border: 1px solid red
 
+    #game-start,
     #game-end
         width: 100%
         height: 100%
         position: absolute
         top: 0
         left: 0
-        transition: all 0.3s ease-in-out
-        background: #383a8f
+        transition: 0.2s all ease-in-out
+        background: #1f1e2179
         color: white
         display: flex
+        flex-direction: column
         align-items: center
         text-align: center
         justify-content: center
-        font-size: 2rem
-        font-weight: 800
-        letter-spacing: 1px
+        h2 
+            font-size: 2rem
+            font-weight: 800
+            letter-spacing: 1px
+            margin-bottom: 20px
+        button
+            color: #13122C
+            background-color: #fff
+            border: 0
+            border-radius: 10px
+            font-size: 2rem
+            padding: 10px 26px
+            box-shadow: 0 20px 30px #39020247
+            transition: 0.2s all ease-in-out
+            &:hover
+                color: #fff
+                background-color: #421a03
+                
+    #game-start
+        transition: 0.2s all ease-in-out
+        z-index: 999999999
+    #game-end
+        transition: 0.2s all ease-in-out
         display: none
 
     #game-screen
-        transition: all 0.3s ease-in-out
+        transition: 0.2s all ease-in-out
         width: 3000px
         height: 400px
+        .game-strawberry
+            position: absolute
+            z-index: 9999
+            bottom: 80px
+        .bg-branches
+            display: none
+        .bg-branch
+            height: 100%
+            position: absolute
+            top: 0
+            z-index: 9999
+        .bg-branch1
+            left: 0px
+        .bg-branch2
+            left: 900px
+        .bg-branch3
+            left: 1772px
+        .bg-bush
+            position: absolute
+            left: 800px
+            width: 100px
+            bottom: 96px
         .game-background
             position: absolute
             z-index: 0
@@ -68,7 +112,7 @@ h5
             background-position-y: center
         .game-stats
             z-index: 8
-            display: flex
+            display: none
             justify-content: space-between
             width: 700px
             position: absolute
@@ -77,17 +121,26 @@ h5
                 margin: 15px
                 display: flex
                 align-items: center
-                img
-                    width: 20px
-                    height: 20px
-                    margin: 0 5px
-                    display: inline-block
+                height: 20px
+                margin: 10px
                 p
-                    margin: 0
+                    margin: 0 0 0 5px
                     font-weight: 900
                     font-size: 20px
                     line-height: 1
                     color: #13122C
+            .game-lives-thing
+                width: 19px
+                height: 19px
+                margin: 0 3px
+                display: inline-block
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: contain
+            .game-lives-empty
+                background-image: url(../images/heart.svg)
+            .game-lives-full
+                background-image: url(../images/heart-fill.svg)
                 
 
     .game-ground
@@ -120,3 +173,6 @@ h5
         background-size: cover
         background-repeat: no-repeat
         background-position: top left
+
+.debug
+    outline: 10px solid red
