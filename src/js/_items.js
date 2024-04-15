@@ -1,11 +1,10 @@
 export default class Item {
     constructor(gameScreen) {
-		this.gameScreen = document.querySelector('.game-background');
+		this.gameScreen = gameScreen
 		this.left = Math.floor(Math.random() * 1200);
 		this.bottom = 80;
 		this.width = 50;
 		this.height = 60;
-		this.bg = document.querySelector('.game-background')
 
 		this.item = document.createElement('img')
         this.item.src = './images/strawberry1.png'

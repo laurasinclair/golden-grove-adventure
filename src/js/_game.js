@@ -28,7 +28,7 @@ export default class Game {
 		this.gameLoopFrequency = Math.round(1000 / 60) // 16 fps
 
 		this.ground = new World(this.gameScreen, 100, this.player)
-		this.player = new Player(this.gameScreen, this.ground.height, 20, 60, 60, this.friction, this.gravity)
+		this.player = new Player(this.gameScreen, this.ground.height, 20, 60, 60, this.friction)
 	}
 
 	start() {
@@ -69,7 +69,7 @@ export default class Game {
 		}
 
 		if (Math.random() > 0.98 && this.items.length < 1) {
-			this.items.push(new Item(this.gameScreen))
+			this.items.push(new Item(document.querySelector('#game-background')))
 		}
 
 		// Create a new enemy based on a random probability
@@ -106,7 +106,7 @@ export default class Game {
 				this.enemies.splice(0, 1)
 			}
 
-			if (this.player.didCollide(enemy)) {
+			if (this.player.didCollideEnemy(enemy)) {
 				enemy.character.remove() // Remove the enemy element from the DOM
 				this.enemies.splice(i, 1)
 				this.lives--

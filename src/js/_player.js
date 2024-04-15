@@ -1,5 +1,5 @@
 export default class Player {
-	constructor(gameScreen, bottom, left, width, height, friction, gravity) {
+	constructor(gameScreen, bottom, left, width, height, friction) {
 		this.gameScreen = gameScreen
 		this.positionX = left
 		this.left = this.positionX
@@ -14,34 +14,29 @@ export default class Player {
 		this.isJumping = false
 
 		this.velX *= friction
-		this.velY += gravity
 
 		this.directionX = 0
 		this.directionY = 0
 
 		this.character = document.createElement('div')
-
 		this.character.classList.add('game-player')
 		this.character.style.width = `${width}px`
 		this.character.style.height = `${height}px`
-
-		this.gameScreen.style.backgroundPositionX = 0
-
 		this.character.style.left = `${this.positionX}px`
 		this.character.style.bottom = `${bottom}px`
 
-		this.bg = document.querySelector('.game-background')
-		this.bg.style.left = 0
+		this.bg = document.querySelector('#game-background')
+		// this.bg.style.left = 0
 
 		this.gameScreen.appendChild(this.character)
 	}
 
 	moveLeft() {
-		this.velX = -3;
+		this.velX = -5;
 	}
 	
 	moveRight() {
-		this.velX = 3;
+		this.velX = 5;
 	}
 	
 	stopMoving() {
@@ -54,7 +49,7 @@ export default class Player {
 	}
 
 	updatePosition() {
-		this.left = this.positionX // position on the game screen (width: 600px) ≠ position in the world (width: 3000px)
+		this.left = this.positionX // position on the game screen (width: 600px) ≠ position in the game world (width: 3000px)
 
 		if (this.left < 20) {
 			// making sure player doesn't go beyond the left limit of the game
@@ -79,23 +74,24 @@ export default class Player {
 
 		if (this.positionX > 1360) {
 			// when player reaches the very end of the level, it can't go past the screen edge
-			this.positionX = 1361
-		}
-
-		if (this.positionX > 1360 && this.left > 679) {
-			this.left = 620
-			this.character.style.left = `${this.left}px`
 			this.endGame = true
+			this.positionX = 1380
+			// winGame()
 		}
 	}
 
-	didCollide(enemy) {
+	didCollideEnemy(enemy) {
 		// creates a box around the player, one around the enemy, and do something if they crash into each other
 		const playerRect = this.character.getBoundingClientRect()
 		const enemyRect = enemy.character.getBoundingClientRect()
 
 		if (playerRect.left < enemyRect.right && playerRect.right > enemyRect.left && playerRect.top < enemyRect.bottom && playerRect.bottom > enemyRect.top) {
-			console.log('Crash!')
+			// console.log('Crash!')
+
+			this.character.classList.add('game-player-sad')
+			setTimeout(() => {
+				this.character.classList.remove('game-player-sad')
+			}, 1000)
 			return true
 		} else {
 			return false
@@ -103,24 +99,23 @@ export default class Player {
 	}
 
 	didCollideItem(item) {
-
 		// creates a box around the player, one around the enemy, and do something if they crash into each other
 		const playerRect = this.character.getBoundingClientRect()
 
-		if (
-			typeof item === 'img' &&
-			item !== null &&
-			'getBoundingClientRect' in item
-		  ) {
-			const itemRect = item.getBoundingClientRect()
+		// if (
+		// 	typeof item === 'img' &&
+		// 	item !== null &&
+		// 	'getBoundingClientRect' in item
+		//   ) {
+		// 	const itemRect = item.getBoundingClientRect()
 
-			if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
-				console.log('Yum! 🍓')
-				return true
-			} else {
-				return false
-			}
-		  }
+		// 	if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
+		// 		console.log('Yum! 🍓')
+		// 		return true
+		// 	} else {
+		// 		return false
+		// 	}
+		//   }
 
 		// const itemRect = item.getBoundingClientRect()
 	}

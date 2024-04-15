@@ -11852,21 +11852,8 @@ body {
   font-size: 18px;
 }
 
-h1, .h1 {
-  font-size: 3rem;
-  color: SlateBlue;
-  font-weight: 800;
-  border-bottom: 8px solid orange;
-  display: inline-block;
-}
-
-h5, .h5 {
-  font-weight: 800;
-}
-
-.card {
-  border-radius: 10px;
-  overflow: hidden;
+.debug {
+  outline: 10px solid red;
 }
 
 #app {
@@ -11971,7 +11958,7 @@ h5, .h5 {
   width: 100px;
   bottom: 96px;
 }
-#game-container #game-screen .game-background {
+#game-container #game-screen #game-background {
   position: absolute;
   z-index: 0;
   top: 0;
@@ -12002,8 +11989,8 @@ h5, .h5 {
 #game-container #game-screen .game-stats .game-lives p {
   margin: 0 0 0 5px;
   font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
+  font-size: 25px;
+  line-height: 0;
   color: #13122C;
 }
 #game-container #game-screen .game-stats .game-lives-thing {
@@ -12041,6 +12028,12 @@ h5, .h5 {
   background-repeat: no-repeat;
   background-position: 13px 13px;
 }
+#game-container .game-player.game-player-sad {
+  background-image: url(../images/player-sad.png);
+  background-size: 41px;
+  background-repeat: no-repeat;
+  background-position: 13px 13px;
+}
 #game-container .game-enemy {
   position: absolute;
   background-color: #13122C;
@@ -12051,10 +12044,6 @@ h5, .h5 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
-}
-
-.debug {
-  outline: 10px solid red;
 }
 
 /*# sourceMappingURL=main.min.css.map */
