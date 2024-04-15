@@ -96,18 +96,22 @@ export default class Player {
 	}
 
 	didCollideItem(item) {
-		// creates a box around the player, one around the enemy, and do something if they crash into each other
 		const playerRect = this.character.getBoundingClientRect()
-		// console.log(item.current.getBoundingClientRect())
+		console.log('?', item)
+		// const itemRect = item.getBoundingClientRect()
+		// console.log(item)
 
 		// if (
-		// 	typeof item === 'img' &&
+		// 	typeof item === 'div' &&
 		// 	item !== null &&
 		// 	'getBoundingClientRect' in item
 		//   ) {
-		// 	const itemRect = item.getBoundingClientRect()
+		// 	const itemRect = item.current.getBoundingClientRect()
 
-		// 	if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
+		// 	if (playerRect.left < itemRect.right && 
+		// 		playerRect.right > itemRect.left && 
+		// 		playerRect.top < itemRect.bottom && 
+		// 		playerRect.bottom > itemRect.top) {
 		// 		console.log('Yum! 🍓')
 		// 		return true
 		// 	} else {

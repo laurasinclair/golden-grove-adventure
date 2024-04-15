@@ -4,26 +4,24 @@ window.onload = function () {
 	const startButton = document.getElementById('start-button')
 	const restartButton = document.getElementById('restart-button')
 	const restartWinButton = document.getElementById('restart-win-button')
-	const gameScreen = document.querySelector('#game-screen')
 
 	startButton.addEventListener('click', function () {
 		startGame()
 	})
 	
 	restartButton.addEventListener('click', function () {
+		console.log("restart button called")
+		window.location.reload()
 		startGame()
 
-		this.gameScreen.style.display = 'flex'
-		this.gameWinScreen.style.display = 'none'
-		this.gameEndScreen.style.display = 'none'
+		this.game.gameScreen.style.display = 'block'
+		this.game.gameWinScreen.style.display = 'none'
+		this.game.gameEndScreen.style.display = 'none'
 	})
 	
 	restartWinButton.addEventListener('click', function () {
-		startGame()
-
-		this.gameScreen.style.display = 'flex'
-		this.gameWinScreen.style.display = 'none'
-		this.gameEndScreen.style.display = 'none'
+		console.log("restartWinButton button called")
+		window.location.reload()
 	})
 
 	function startGame() {

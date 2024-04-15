@@ -68,7 +68,7 @@ export default class Game {
 			clearInterval(this.gameIntervalId)
 		}
 
-		if (Math.random() > 0.98 && this.items.length < 1) {
+		if (Math.random() > 0.98 && this.items.length < 3) {
 			this.items.push(new Item(document.querySelector('#game-background')))
 		}
 
@@ -81,6 +81,11 @@ export default class Game {
 
 	update() {
 		this.player.move()
+
+		setInterval(
+			this.score += 50, 
+			1000
+		)
 
 		// check for collision and if an item is still on the screen
 		for (let i = 0; i < this.items.length; i++) {
@@ -139,7 +144,7 @@ export default class Game {
 
 		// create a new enemy based on a random probability
 		// when there is no other enemies on the screen
-		if (Math.random() > 0.98 && this.enemies.length < 1) {
+		if (Math.random() > 0.3 && this.enemies.length < 1) {
 			this.enemies.push(new Enemy(this.gameScreen))
 		}
 	}
@@ -152,9 +157,7 @@ export default class Game {
 		this.gameLoseScreen.style.display = 'flex'
 
 		document.querySelector('.game-score p').remove()
-        if (document.querySelector('.strawberry')) {
-            document.querySelector('.strawberry').remove()
-        }
+		this.items = []
 	}
 
 	winGame() {
@@ -165,8 +168,6 @@ export default class Game {
 		this.gameWinScreen.style.display = 'flex'
 
 		document.querySelector('.game-score p').remove()
-        if (document.querySelector('.strawberry')) {
-            document.querySelector('.strawberry').remove()
-        }
+		this.items = []
 	}
 }

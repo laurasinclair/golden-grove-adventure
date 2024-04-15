@@ -23,7 +23,7 @@ export default class Enemy {
 		this.character.style.left = `${this.left}px`
 		this.character.style.top = `${this.top}px`
 
-		this.character.style.left = `-${document.querySelector('#game-background').style.left}px`
+		this.character.style.left = `-${this.bg.style.left}px`
 	}
 
 	move() {
