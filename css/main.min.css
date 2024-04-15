@@ -11881,7 +11881,6 @@ body {
   top: 0;
   left: 0;
   transition: 0.2s all ease-in-out;
-  background: rgba(31, 30, 33, 0.4745098039);
   color: white;
   display: flex;
   flex-direction: column;
@@ -11925,14 +11924,17 @@ body {
 #game-container #game-start {
   transition: 0.2s all ease-in-out;
   z-index: 999999999;
+  background: rgba(31, 30, 33, 0.4745098039);
 }
 #game-container #game-lose {
   transition: 0.2s all ease-in-out;
   display: none;
+  background: #13122C;
 }
 #game-container #game-win {
   transition: 0.2s all ease-in-out;
   display: none;
+  background: #13122C;
 }
 #game-container #game-screen {
   transition: 0.2s all ease-in-out;
@@ -11943,6 +11945,12 @@ body {
   position: absolute;
   z-index: 9999;
   bottom: 80px;
+  content: "";
+  display: block;
+  background-image: url(./../images/strawberry1.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50px 50px;
 }
 #game-container #game-screen .bg-branches {
   display: none;

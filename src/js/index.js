@@ -4,6 +4,7 @@ window.onload = function () {
 	const startButton = document.getElementById('start-button')
 	const restartButton = document.getElementById('restart-button')
 	const restartWinButton = document.getElementById('restart-win-button')
+	const gameScreen = document.querySelector('#game-screen')
 
 	startButton.addEventListener('click', function () {
 		startGame()
@@ -17,7 +18,7 @@ window.onload = function () {
 		this.gameEndScreen.style.display = 'none'
 	})
 	
-	restartWin.addEventListener('click', function () {
+	restartWinButton.addEventListener('click', function () {
 		startGame()
 
 		this.gameScreen.style.display = 'flex'

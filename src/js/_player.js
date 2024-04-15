@@ -85,8 +85,6 @@ export default class Player {
 		const enemyRect = enemy.character.getBoundingClientRect()
 
 		if (playerRect.left < enemyRect.right && playerRect.right > enemyRect.left && playerRect.top < enemyRect.bottom && playerRect.bottom > enemyRect.top) {
-			// console.log('Crash!')
-
 			this.character.classList.add('game-player-sad')
 			setTimeout(() => {
 				this.character.classList.remove('game-player-sad')
@@ -100,6 +98,7 @@ export default class Player {
 	didCollideItem(item) {
 		// creates a box around the player, one around the enemy, and do something if they crash into each other
 		const playerRect = this.character.getBoundingClientRect()
+		// console.log(item.current.getBoundingClientRect())
 
 		// if (
 		// 	typeof item === 'img' &&

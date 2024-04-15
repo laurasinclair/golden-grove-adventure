@@ -33,7 +33,6 @@ body
         top: 0
         left: 0
         transition: 0.2s all ease-in-out
-        background: #1f1e2179
         color: white
         display: flex
         flex-direction: column
@@ -65,12 +64,15 @@ body
     #game-start
         transition: 0.2s all ease-in-out
         z-index: 999999999
+        background: #1f1e2179
     #game-lose
         transition: 0.2s all ease-in-out
         display: none
+        background: #13122C
     #game-win
         transition: 0.2s all ease-in-out
         display: none
+        background: #13122C
     #game-screen
         transition: 0.2s all ease-in-out
         width: 3000px
@@ -79,6 +81,12 @@ body
             position: absolute
             z-index: 9999
             bottom: 80px
+            content: ''
+            display: block
+            background-image: url(./../images/strawberry1.png)
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: 50px 50px
         .bg-branches
             display: none
         .bg-branch
