@@ -1,5 +1,5 @@
 export default class Player {
-	constructor(gameScreen, bottom, left, width, height, friction) {
+	constructor(gameScreen, bottom, left, width, height, friction, gameBg) {
 		this.gameScreen = gameScreen
 		this.positionX = left
 		this.left = this.positionX
@@ -25,8 +25,8 @@ export default class Player {
 		this.character.style.left = `${this.positionX}px`
 		this.character.style.bottom = `${bottom}px`
 
-		this.bg = document.querySelector('#game-background')
-		// this.bg.style.left = 0
+		this.gameBg = gameBg
+		// this.gameBg.style.left = 0
 
 		this.gameScreen.appendChild(this.character)
 	}
@@ -64,7 +64,7 @@ export default class Player {
 		if (this.positionX > 250) {
 			// when player is at 2/3 of the screen it doesn't actually move anymore, but the background does
 			this.left = 250
-			this.bg.style.left = `-${this.positionX - 250}px`
+			this.gameBg.style.left = `-${this.positionX - 250}px`
 		}
 
 		if (this.positionX > 1000) {
@@ -97,8 +97,11 @@ export default class Player {
 
 	didCollideItem(item) {
 		const playerRect = this.character.getBoundingClientRect()
-		console.log('?', item)
 		// const itemRect = item.getBoundingClientRect()
+
+		// console.log('?', item)
+
+
 		// console.log(item)
 
 		// if (

@@ -27,8 +27,11 @@ export default class Game {
 		this.gameIntervalId = null
 		this.gameLoopFrequency = Math.round(1000 / 60) // 16 fps
 
-		this.ground = new World(this.gameScreen, 100, this.player)
-		this.player = new Player(this.gameScreen, this.ground.height, 20, 60, 60, this.friction)
+		this.world = new World(this.gameScreen, 100, this.player)
+		this.player = new Player(this.gameScreen, this.world.groundHeight, 20, 60, 60, this.friction, this.world.gameBg)
+
+		this.gameBg = this.world.gameBg
+		console.log(this.world.gameBg)
 	}
 
 	start() {
@@ -53,7 +56,7 @@ export default class Game {
         4 lives ♥♥♥
         3 lives ♥♥♡
         2 lives ♥♡♡
-        1 lives ♡♡♡
+        1 life ♡♡♡
         */
 		for (let i = 0; i < this.lives - 1; i++) {
 			this.livesContainer[i].classList.remove('game-lives-empty')
@@ -69,13 +72,13 @@ export default class Game {
 		}
 
 		if (Math.random() > 0.98 && this.items.length < 3) {
-			this.items.push(new Item(document.querySelector('#game-background')))
+			this.items.push(new Item(this.gameBg))
 		}
 
 		// Create a new enemy based on a random probability
 		// when there is no other enemies on the screen
 		if (Math.random() > 0.98 && this.enemies.length < 1) {
-			this.enemies.push(new Enemy(this.gameScreen, this.player))
+			this.enemies.push(new Enemy(this.gameScreen, this.player, this.gameBg))
 		}
 	}
 

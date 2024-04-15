@@ -1,6 +1,6 @@
 export default class Item {
-	constructor(gameScreen) {
-		this.gameScreen = gameScreen
+	constructor(gameBg) {
+		this.gameBg = gameBg
 		this.left = Math.floor(Math.random() * 1200)
 		this.bottom = 80
 		this.width = 50
@@ -13,6 +13,6 @@ export default class Item {
 		this.item.style.left = `${this.left}px`
 		this.item.style.bottom = `${this.bottom}px`
 
-		this.gameScreen.appendChild(this.item)
+		this.gameBg.appendChild(this.item)
 	}
 }
