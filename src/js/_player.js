@@ -31,7 +31,7 @@ export default class Player {
 		this.character.style.bottom = `${bottom}px`
 
 		this.bg = document.querySelector('.game-background')
-		this.bg.style.left = `-${this.positionX}px`
+		this.bg.style.left = 0
 
 		this.gameScreen.appendChild(this.character)
 	}
@@ -103,7 +103,6 @@ export default class Player {
 	}
 
 	didCollideItem(item) {
-		console.log('item', item)
 
 		// creates a box around the player, one around the enemy, and do something if they crash into each other
 		const playerRect = this.character.getBoundingClientRect()
@@ -114,16 +113,15 @@ export default class Player {
 			'getBoundingClientRect' in item
 		  ) {
 			const itemRect = item.getBoundingClientRect()
-			console.log(itemRect);
+
+			if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
+				console.log('Yum! 🍓')
+				return true
+			} else {
+				return false
+			}
 		  }
 
 		// const itemRect = item.getBoundingClientRect()
-
-		// if (playerRect.left < itemRect.right && playerRect.right > itemRect.left && playerRect.top < itemRect.bottom && playerRect.bottom > itemRect.top) {
-		// 	console.log('Yum! 🍓')
-		// 	return true
-		// } else {
-		// 	return false
-		// }
 	}
 }

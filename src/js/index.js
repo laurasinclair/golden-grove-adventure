@@ -43,7 +43,6 @@ window.onload = function () {
 				case 'ArrowRight':
 					game.player.stopMoving() // Call stopMoving method when left or right arrow key is released
 					break
-				// Handle other keys as needed
 			}
 		}
 

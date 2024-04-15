@@ -4,6 +4,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Jersey+20&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11846,7 +11847,7 @@ textarea.form-control-lg {
 }
 body {
   background-color: lavender;
-  font-family: sans-serif;
+  font-family: "Jersey 20", sans-serif;
   color: DarkSlateBlue;
   font-size: 18px;
 }
@@ -11903,14 +11904,16 @@ h5, .h5 {
 #game-container #game-start h2, #game-container #game-start .h2,
 #game-container #game-end h2,
 #game-container #game-end .h2 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 3rem;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 #game-container #game-start button,
 #game-container #game-end button {
   color: #13122C;
+  font-family: "Jersey 20", sans-serif;
+  letter-spacing: 0.6px;
   background-color: #fff;
   border: 0;
   border-radius: 10px;
@@ -11919,10 +11922,12 @@ h5, .h5 {
   box-shadow: 0 20px 30px rgba(57, 2, 2, 0.2784313725);
   transition: 0.2s all ease-in-out;
 }
-#game-container #game-start button:hover,
-#game-container #game-end button:hover {
+#game-container #game-start button:hover, #game-container #game-start button:focus,
+#game-container #game-end button:hover,
+#game-container #game-end button:focus {
   color: #fff;
   background-color: #421a03;
+  outline: none;
 }
 #game-container #game-start {
   transition: 0.2s all ease-in-out;
@@ -11952,7 +11957,7 @@ h5, .h5 {
   z-index: 9999;
 }
 #game-container #game-screen .bg-branch1 {
-  left: 0px;
+  left: -14px;
 }
 #game-container #game-screen .bg-branch2 {
   left: 900px;
