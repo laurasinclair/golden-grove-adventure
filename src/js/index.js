@@ -31,6 +31,7 @@ window.onload = function () {
 
 		function handleKeyDown(event) {
 			const key = event.key
+			event.preventDefault // default behaviour here would be scrolling up or down the page
 
 			switch (key) {
 				case 'ArrowLeft':
