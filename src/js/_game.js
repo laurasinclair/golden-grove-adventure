@@ -77,7 +77,7 @@ export default class Game {
 
 		// Create a new enemy based on a random probability
 		// when there is no other enemies on the screen
-		if (Math.random() > 0.98 && this.enemies.length < 1) {
+		if (Math.random() > 0.38 && this.enemies.length < 1) {
 			this.enemies.push(new Enemy(this.gameScreen, this.player, this.gameBg))
 		}
 	}
