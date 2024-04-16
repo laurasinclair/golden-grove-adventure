@@ -1,34 +1,66 @@
-# Project's name
+# Golden Grove Adventure
 
-[Click here to see deployed game](http://github.com)
+[🍓 Deployed game](https://golden-grove-adventure.netlify.app/)
+
 
 ## Description
-Brief description of the project
+Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. You'll guide a character through a sunny golden world, dodging enemies falling from the sky.
+
+---
 
 
 ## MVP
-_MVP definition here, list of minimum features_
+- [x] A 2D platform game with 1-2 levels
+- [x] 1 character, can run when pressing left/right arrows
+- [x] Character has to go from left to right and finish each level without dying
+- [x] Gets +1 if character gathers item, -1 if hit by an enemy
+- [x] Enemy is another character falling from the sky
+- [x] Dies if ❤️ < 1
+
+
+### Requirements
+- [x] Start screen
+- [x] Win screen
+- [x] Lose screen
+- [x] Start/restart button
+- [x] Mechanics for:
+	- [x] Gravity
+	- [x] Run on right/left arrows
+	- [x] Generating enemies + collision
+	- [x] Background moves when character moves
+	- [x] Score ++
+	- [x] Lives --
+
+- [x] Images for:
+	- [x] Character states
+		- [x] Normal
+		- [x] Gets hit
+	- [x] Enemy
+	- [x] Item
+	- [x] Ground
+	- [x] Background
+	- [x] ==Bonus!== Life points
 
 
 ## Backlog
-_List of features you might implement after the MVP_
 
+#### Game
+- [ ] Ability to gathers life points
+- [ ] Jump
+- [ ] Mobile version (player moves on tap)
 
-## Data structure
-_List of classes and methods_
+#### Code
+- [ ] Big cleanup/refactor
+- [ ] Renaming images
 
+<!-- ## Data structure -->
+<!-- _List of classes and methods_ -->
 
-## States y States Transitions
-_List of states (views) of your game_
-
-
-## Task
-_List of tasks in order of priority_
-
+<!-- ## Task -->
+<!-- _List of tasks in order of priority_ -->
 
 ## Links
 
-- [Trello Link](https://trello.com)
-- [Slides Link](http://slides.com)
-- [Github repository Link](http://github.com)
-- [Deployment Link](http://github.com)
+- [Presentation](https://docs.google.com/presentation/d/1Odzxkxs961gMwbHBNbeHWFVgBLAfVjiA2fFY6jAuKQM/edit)
+- [Github repository](https://github.com/laurasinclair/golden-grove-adventure)
+- [Deployed version](https://golden-grove-adventure.netlify.app)
