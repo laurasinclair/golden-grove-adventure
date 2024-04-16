@@ -6,7 +6,6 @@
 ## Description
 Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. You'll guide a character through a sunny golden world, dodging enemies falling from the sky.
 
----
 
 
 ## MVP
@@ -23,7 +22,7 @@ Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. 
 - [x] Win screen
 - [x] Lose screen
 - [x] Start/restart button
-- [x] Mechanics for:
+- Mechanics for:
 	- [x] Gravity
 	- [x] Run on right/left arrows
 	- [x] Generating enemies + collision
@@ -31,7 +30,7 @@ Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. 
 	- [x] Score ++
 	- [x] Lives --
 
-- [x] Images for:
+- Images for:
 	- [x] Character states
 		- [x] Normal
 		- [x] Gets hit
@@ -39,7 +38,7 @@ Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. 
 	- [x] Item
 	- [x] Ground
 	- [x] Background
-	- [x] ==Bonus!== Life points
+	- [x] **Bonus!** Life points
 
 
 ## Backlog
