@@ -24,22 +24,22 @@ Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. 
 - [x] Start/restart button
 
 ##### Mechanics for:
-	- [x] Gravity
-	- [x] Run on right/left arrows
-	- [x] Generating enemies + collision
-	- [x] Background moves when character moves
-	- [x] Score ++
-	- [x] Lives --
+- [x] Gravity
+- [x] Run on right/left arrows
+- [x] Generating enemies + collision
+- [x] Background moves when character moves
+- [x] Score ++
+- [x] Lives --
 
 ##### Images for:
-	- [x] Character states
-		- [x] Normal
-		- [x] Gets hit
-	- [x] Enemy
-	- [x] Item
-	- [x] Ground
-	- [x] Background
-	- [x] **Bonus!** Life points
+- [x] Character states
+    - [x] Normal
+    - [x] Gets hit
+- [x] Enemy
+- [x] Item
+- [x] Ground
+- [x] Background
+- [x] **Bonus!** Life points
 
 
 ## Backlog
