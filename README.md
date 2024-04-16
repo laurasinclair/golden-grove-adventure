@@ -22,6 +22,7 @@ Welcome to Golden Grove Adventure – a 2D platform game built with vanilla JS. 
 - [x] Win screen
 - [x] Lose screen
 - [x] Start/restart button
+
 ##### Mechanics for:
 	- [x] Gravity
 	- [x] Run on right/left arrows
