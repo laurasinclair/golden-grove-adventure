@@ -2,7 +2,7 @@
 
 [🍓 Deployed game](https://golden-grove-adventure.netlify.app/)
 
-![[./images/meta_img.jpg]]
+[Golden Grove Adventure](./images/meta_img.jpg)
 
 ## Description
 
