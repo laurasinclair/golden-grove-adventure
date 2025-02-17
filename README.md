@@ -2,7 +2,7 @@
 
 [🍓 Deployed game](https://golden-grove-adventure.netlify.app/)
 
-[Golden Grove Adventure](./images/meta_img.jpg)
+[Golden Grove Adventure](https://github.com/laurasinclair/golden-grove-adventure/blob/138f7f4067aa22633ab1159f0f6a56c7569f304a/images/meta_img.jpg)
 
 ## Description
 
